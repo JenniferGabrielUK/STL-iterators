@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <set>
+#include <map>
+#include <list>
+
+void display (const std::vector<int> &vec) {
+	std::cout << "[ ";
+	for (const auto& i : vec) {
+		std::cout << i << " ";
+	}
+	std::cout << "]";
+}
+
+void test1 () {
+	std::cout << "\n=======Iterator for Vector's=======" << std::endl;
+	std::vector<int> nums1{ 1,2,3,4,5 };
+	
+	auto it = nums1.begin();	    //point to 1 (the iterator is an object in itself it's not a pointer)
+	
+	std::cout << *it << std::endl; 
+	it++;							//point to 2 (increment by one)
+	std::cout << *it << std::endl;
+	it += 2;						//point to 4 (increments by two places already pointing to 2)
+	std::cout << *it << std::endl;
+	it -= 2;						//point to 2 (decrements by two places back to 2)
+	std::cout << *it << std::endl;
+	
+	it = nums1.end() - 1;		//poin to 5 (reset the iterator to point to the last number which is the vector size minus one for the null terminator
+	std::cout << *it << std::endl;
+}
+
+int main()
+{
+	test1();
+
+	return 0;
+}
