@@ -31,9 +31,25 @@ void test1 () {
 	std::cout << *it << std::endl;
 }
 
+void test2() {
+	std::cout << "\=====Iterator's for Vector's 2======" << std::endl;
+	std::vector<int> nums1{ 1,2,3,4,5 };
+	std::vector<int>::iterator it = nums1.begin();  //iterator is pointing to the 1 in the nums1 vector
+	while (it != nums1.end()) {						//while the iterator is not pointing to the null terminator at the end of the vector          
+		std::cout << *it << std::endl;				//cout what it is poiniting to be deferencing *
+		++it;										//then increment the iterator by one
+	}
+	it = nums1.begin(); //resetting the iterator to point to 1
+	while (it != nums1.end()) {	//change all elements in the vector to 0
+		*it = 0;
+		it++;
+	} 
+	display(nums1);
+}
+
 int main()
 {
 	test1();
-
+	test2();
 	return 0;
 }
