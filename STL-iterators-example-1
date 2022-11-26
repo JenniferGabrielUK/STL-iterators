@@ -47,9 +47,28 @@ void test2() {
 	display(nums1);
 }
 
+void test3() {  //making the iterator constant in order to show potential compiler error if program was to try and change a variable
+	//using a const iterator
+	std::cout << "\==========Const Iterator's==========" << std::endl;
+	std::vector<int> nums1{ 1,2,3,4,5 };
+	std::vector<int>::const_iterator it1 = nums1.begin(); //the iterator cannot change what it is poitning too
+
+	while (it1 != nums1.end()) {
+		std::cout << *it1 << std::endl;
+	}
+
+	//compiler error would occur when trying to change an element
+	it1 = nums1.begin();
+	while (it1 != nums1.end()) {
+		//*it1 = 0; // Compiler error - READ ONLY
+		it1++;
+	}
+}
+
 int main()
 {
 	test1();
 	test2();
+	test3();
 	return 0;
 }
