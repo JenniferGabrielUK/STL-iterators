@@ -55,6 +55,7 @@ void test3() {  //making the iterator constant in order to show potential compil
 
 	while (it1 != nums1.end()) {
 		std::cout << *it1 << std::endl;
+		it1++;
 	}
 
 	//compiler error would occur when trying to change an element
