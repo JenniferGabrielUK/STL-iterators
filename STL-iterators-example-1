@@ -66,10 +66,22 @@ void test3() {  //making the iterator constant in order to show potential compil
 	}
 }
 
+void test4() {
+	std::cout << "\==Reverse Iterator & Map Iterator===" << std::endl;
+	//using a reverse iterator
+	std::vector<int> vec{ 1,2,3,4,5 };
+	auto it1 = vec.rbegin(); //reverse iterator using 'r' .rbegin(); satrts at 5 and works backwards with increment
+	while (it1 != vec.rend()) { //.rend()
+		std::cout << *it1 << std::endl;
+		++it1;
+	}
+}
+
 int main()
 {
 	test1();
 	test2();
 	test3();
+	test4(); 
 	return 0;
 }
