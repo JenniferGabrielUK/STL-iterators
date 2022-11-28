@@ -67,7 +67,7 @@ void test3() {  //making the iterator constant in order to show potential compil
 }
 
 void test4() {
-	std::cout << "\==Reverse Iterator & Map Iterator===" << std::endl;
+	std::cout << "\==Reverse Iterator==================" << std::endl;
 	//using a reverse iterator
 	std::vector<int> vec{ 1,2,3,4,5 };
 	auto it1 = vec.rbegin(); //reverse iterator using 'r' .rbegin(); satrts at 5 and works backwards with increment
@@ -75,6 +75,12 @@ void test4() {
 		std::cout << *it1 << std::endl;
 		++it1;
 	}
+	std::cout << "\==Reverse Iterator & List Iterator==" << std::endl;
+	std::list<std::string> name{ "Jenny", "Elizabeth","Gabriel" };
+	auto it2 = name.rbegin();
+	std::cout << *it2 << std::endl; //print Gabriel
+	it2++; //point to Elizabeth
+	std::cout << *it2 << std::endl; //print Elizabeth
 }
 
 int main()
