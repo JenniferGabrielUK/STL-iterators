@@ -94,12 +94,23 @@ std::cout << "\n============Map Iterator============" << std::endl; //A map is a
 			std::cout << it3->first << ": " << it3-> second << std::endl;
 			it3++;
 }
-
+void test5() {
+	//iterate over a subset of a container
+	std::cout << "\n==========Iterate Over Subset======" << std::endl;
+	std::vector<int> vec{ 1,2,3,4,5,6,7,8,9,10 };
+	auto start = vec.cbegin() + 2; //const iterator pointing to 3
+	auto finish = vec.cend() - 3; //const iterator -3 pointing to the 7
+	while (start != finish) {
+		std::cout << *start << std::endl;
+		start++; //increment the start iterator
+	}
+}
 int main()
 {
 	test1();
 	test2();
 	test3();
 	test4(); 
+	test5();
 	return 0;
 }
