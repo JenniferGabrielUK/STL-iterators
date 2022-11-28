@@ -32,7 +32,7 @@ void test1 () {
 }
 
 void test2() {
-	std::cout << "\=====Iterator's for Vector's 2======" << std::endl;
+	std::cout << "\n=====Iterator's for Vector's 2======" << std::endl;
 	std::vector<int> nums1{ 1,2,3,4,5 };
 	std::vector<int>::iterator it = nums1.begin();  //iterator is pointing to the 1 in the nums1 vector
 	while (it != nums1.end()) {						//while the iterator is not pointing to the null terminator at the end of the vector          
@@ -49,7 +49,7 @@ void test2() {
 
 void test3() {  //making the iterator constant in order to show potential compiler error if program was to try and change a variable
 	//using a const iterator
-	std::cout << "\==========Const Iterator's==========" << std::endl;
+	std::cout << "\n==========Const Iterator's==========" << std::endl;
 	std::vector<int> nums1{ 1,2,3,4,5 };
 	std::vector<int>::const_iterator it1 = nums1.begin(); //the iterator cannot change what it is poitning too
 
@@ -67,7 +67,7 @@ void test3() {  //making the iterator constant in order to show potential compil
 }
 
 void test4() {
-	std::cout << "\==Reverse Iterator==================" << std::endl;
+	std::cout << "\n==Reverse Iterator==================" << std::endl;
 	//using a reverse iterator
 	std::vector<int> vec{ 1,2,3,4,5 };
 	auto it1 = vec.rbegin(); //reverse iterator using 'r' .rbegin(); satrts at 5 and works backwards with increment
@@ -75,12 +75,24 @@ void test4() {
 		std::cout << *it1 << std::endl;
 		++it1;
 	}
-	std::cout << "\==Reverse Iterator & List Iterator==" << std::endl;
+	std::cout << "\n==Reverse Iterator & List Iterator==" << std::endl;
 	std::list<std::string> name{ "Jenny", "Elizabeth","Gabriel" };
 	auto it2 = name.rbegin();
 	std::cout << *it2 << std::endl; //print Gabriel
 	it2++; //point to Elizabeth
 	std::cout << *it2 << std::endl; //print Elizabeth
+}
+std::cout << "\n============Map Iterator============" << std::endl; //A map is a key and a value ie a pair
+	//iterator over a map
+	std::map <std::string, std::string> favourites{
+		{"Jenny", "Cookies"},
+		{"Elizabeth", "Chocolate"},
+		{"Gabriel", "Cake"}
+	};
+	auto it3 = favourites.begin(); //iterate over the map of string to string pairs
+		while (it3 != favourites.end()) {
+			std::cout << it3->first << ": " << it3-> second << std::endl;
+			it3++;
 }
 
 int main()
